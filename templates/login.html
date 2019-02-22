@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Phone Verification</title>
+  </head>
+  <body>
+    <h1>Verify your phone number</h1>
+
+    <form action="/phone_verification" accept-charset="UTF-8" method="post">
+      <div>
+        <label for="phone_number">Phone number:</label>
+        <input type="tel" name="phone_number" id="phone_number" />
+      </div>
+      <div>
+        <p>Verification method</p>
+        <label for="method_sms">SMS: </label>
+        <input type="radio" name="method" id="method_sms" value="sms" />
+        <label for="method_call">Call: </label>
+        <input type="radio" name="method" id="method_call" value="call" />
+      </div>
+      <button name="button" type="submit">Verify</button>
+    </form>
+  </body>
+</html>
