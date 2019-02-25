@@ -11,8 +11,8 @@ app.secret_key = os.urandom(24)
 
 @app.route("/phone_verification", methods=["GET", "POST"])
 def phone_verification():
-    key = 'MAYMI3MZA5MZAWNJUXMD'
-    auth = 'Nzg4NzI0ZmQ3MTBlMDRiMjMzN2IyOWY0MjI3YzVj'
+    key = 'Plivo Auth ID'
+    auth = 'Plivo Auth token'
     client = plivo.RestClient(key, auth)
     if request.method == "POST":
         phone_number = request.form.get("phone_number")
