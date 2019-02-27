@@ -1,3 +1,3 @@
 Authors
 - Kiran NK
-- Bhargava
+- Bhargava I
