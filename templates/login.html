@@ -1,23 +1,86 @@
-<html>
-  <head>
-    <title>Phone Verification</title>
-  </head>
-  <body>
-    <h1>Verify your phone number</h1>
+<head>
+    <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.css" data-turbolinks-track="reload" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.js" data-turbolinks-track="reload"></script>
+    <script type="text/javascript">
+               function empty() {
+                   var d = document.getElementById('phone_number').value;
+                   if (document.getElementById("method_sms").checked == true) {
+                       var e = document.getElementById('method_sms').value;
+                   } else {
+                       var e = '';
+                   }
+                   if (document.getElementById("method_call").checked == true) {
+                       var f = document.getElementById('method_call').value;
+                   } else {
+                       var f = '';
+                   }
+                   if (d == '' || (e == '' && f == '')) {
+                       alert("Please Enter the phone number and select a method of verification")
+                       return false;
+                   } else {
+                       return true;
+                   }
+                   ;
+               }
+     </script>
+     <style>
+.button {
+ background-color: #43A047;
+ border: none;
+ color: white;
+ padding: 15px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ margin: 4px 2px;
+ cursor: pointer;
+}
+</style>
+ </head>
+ <body>
 
-    <form action="/phone_verification" accept-charset="UTF-8" method="post">
-      <div>
-        <label for="phone_number">Phone number:</label>
-        <input type="tel" name="phone_number" id="phone_number" />
-      </div>
-      <div>
-        <p>Verification method</p>
-        <label for="method_sms">SMS: </label>
-        <input type="radio" name="method" id="method_sms" value="sms" />
-        <label for="method_call">Call: </label>
-        <input type="radio" name="method" id="method_call" value="call" />
-      </div>
-      <button name="button" type="submit">Verify</button>
-    </form>
-  </body>
+ </br>
+
+ </br>
+   <title align="center">Phone Verification</title>
+  </br>
+ <form action="/phone_verification" accept-charset="UTF-8" method="post">
+
+     <table style="width:50%" border="1" align="center">
+       <div style="text-align: center;">
+         <h1>Verify your phone number</h1>
+       </div>
+     </table>
+        </br>
+ </br>
+ <div style="text-align: center;">
+       <label for="authy-countries">Country code:</label>
+        <select style="width: 20px;" name="country_code" id="authy-countries" data-show-as="number"></select>
+    </div>
+</br>
+ </br>
+ <div style="text-align: center;">
+       <label for="phone_number">Phone number  :  </label>
+       <input  style="width:9.5%" type="text" name="phone_number" id="phone_number" />
+ </div>
+
+</br>
+ <div style="text-align: center;">
+       <h3>Verification method</h3>
+            </br>
+
+       <label for="method_sms">SMS: </label>
+       <input type="radio" name="method" id="method_sms" value="sms" />
+       <label for="method_call">Call: </label>
+       <input type="radio" name="method" id="method_call" value="call" />
+ </div>
+  </br>
+ </br>
+
+ <div style="text-align: center;">
+     <button class="button" style="width:13%"  onclick="empty()">Verify</button>
+ </div>
+ </form>
+ </body>
 </html>
