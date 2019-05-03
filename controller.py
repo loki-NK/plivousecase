@@ -25,9 +25,9 @@ def phone_verification():
         session['otp'] = otp
 
         if method == 'sms':
-            client.messages.create(src='1 702-707-7467',dst=country+phone_number,text= 'Your one time password is'+ ' ' + otp);
+            client.messages.create(src='1 777-777-7777',dst=country+phone_number,text= 'Your one time password is'+ ' ' + otp);
         else:
-            client.calls.create(from_= '+1 702-707-7467',to_= country+phone_number, answer_url= 'http://b9516a63.ngrok.io/answerurl' )
+            client.calls.create(from_= '1 777-777-7777',to_= country+phone_number, answer_url= 'http://b9516a63.ngrok.io/answerurl' )
 
         return redirect(url_for("verify"))
 
