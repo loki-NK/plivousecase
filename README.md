@@ -1,5 +1,6 @@
 # plivousecase
 SMS OTP using Plivo Python SDK. 
+
 Step 1 : Take the number as input
 <img width="1060" alt="image" src="https://github.com/loki-NK/plivousecase/assets/29515209/b20861d6-6c52-4da6-8930-858350a4e572">
 
